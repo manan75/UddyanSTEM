@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
           <img
-            src="/logo.png" // replace with your logo path
+            src="/logo.png" 
             alt="Logo"
             className="h-12 w-12 object-contain"
           />
@@ -33,11 +34,46 @@ const Navbar = () => {
             isOpen ? "top-16 flex" : "top-[-500px] hidden md:flex"
           }`}
         >
-          <li className="hover:text-white cursor-pointer transition-colors">Home</li>
-          <li className="hover:text-white cursor-pointer transition-colors">About Us</li>
-          <li className="hover:text-white cursor-pointer transition-colors">Contact Us</li>
-          <li className="hover:text-white cursor-pointer transition-colors">Courses</li>
-          <li className="hover:text-white cursor-pointer transition-colors">Gallery</li>
+          <li>
+            <Link
+              to="/"
+              className="hover:text-white cursor-pointer transition-colors"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="hover:text-white cursor-pointer transition-colors"
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="hover:text-white cursor-pointer transition-colors"
+            >
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/CoursesPage"
+              className="hover:text-white cursor-pointer transition-colors"
+            >
+              Courses
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/gallery"
+              className="hover:text-white cursor-pointer transition-colors"
+            >
+              Gallery
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

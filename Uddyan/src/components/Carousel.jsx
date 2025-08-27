@@ -4,12 +4,15 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import img5 from "../assets/img5.jpeg"
+import img4 from "../assets/img4.jpeg"
+import img3 from "../assets/img3.jpeg"
 
 export default function Carousel() {
   const slides = [
-    { id: 1, img: "https://media.istockphoto.com/id/516366236/photo/small-indian-girl-and-boy-doing-science-experiment.jpg?s=1024x1024&w=is&k=20&c=Uon3nUFex0-DZ7PsEdgSTAKgIVqAK-NiljxqoxzEDMU=", title: "Fun Learning" },
-    { id: 2, img: "https://via.placeholder.com/400x250?text=Slide+2", title: "Explore Science" },
-    { id: 3, img: "https://via.placeholder.com/400x250?text=Slide+3", title: "Creative Arts" },
+    { id: 1, img: img5, title: "Fun Learning" },
+    { id: 2, img: img3, title: "Explore Science" },
+    { id: 3, img: img4, title: "Creative Arts" },
   ];
 
   return (
@@ -28,7 +31,7 @@ export default function Carousel() {
               <img
                 src={slide.img}
                 alt={slide.title}
-                className="w-full h-64 object-cover"
+                className="w-full h-[500px] object-cover"
               />
               <div className="p-4">
                 <h3 className="text-lg font-bold text-blue-600">{slide.title}</h3>

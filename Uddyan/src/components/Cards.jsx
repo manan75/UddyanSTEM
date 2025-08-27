@@ -1,40 +1,44 @@
 import React from "react";
+import img1 from "../assets/img1.jpeg"
+import img2 from "../assets/img2.jpeg"
+import img3 from "../assets/img3.jpeg"
+import img4 from "../assets/img4.jpeg"
 
 const cards = [
   {
-    title: "Web Design",
-    description: "Crafts engaging, kid-friendly websites.",
-    tags: ["Fun Layouts", "Games", "Colorful Pages"],
-    image: "https://images.unsplash.com/photo-1618213837799-401e1a0c7ab2?auto=format&fit=crop&w=800&q=60",
+    title: "STEM Courses",
+    description: "Hands-on STEM learning for all age groups with flexible modules.",
+    tags: ["Science", "Technology", "Engineering", "Math"],
+    image: img1,
   },
   {
-    title: "Graphic Design",
-    description: "Creates bright and playful visuals.",
-    tags: ["Cartoons", "Illustrations", "Color Splash"],
-    image: "https://images.unsplash.com/photo-1625840163566-93f7e3bca229?auto=format&fit=crop&w=800&q=60",
+    title: "DIY Workshops",
+    description: "Interactive workshops to spark curiosity and creativity.",
+    tags: ["Robotics", "Electronics", "Coding"],
+    image: img2,
   },
   {
-    title: "Developers",
-    description: "Builds interactive and exciting projects.",
-    tags: ["Games", "Apps", "Animations"],
-    image: "https://images.unsplash.com/photo-1623089957594-5e7b6c5c6a2c?auto=format&fit=crop&w=800&q=60",
+    title: "Project Guidance",
+    description: "Expert mentorship for school exhibitions and engineering projects.",
+    tags: ["Problem Solving", "Innovation", "Collaboration"],
+    image: img3,
   },
   {
-    title: "Story Writing",
-    description: "Delivers fun and imaginative stories.",
-    tags: ["Fairytales", "Adventure", "Creative Writing"],
-    image: "https://images.unsplash.com/photo-1614850523425-bd36e25e5d07?auto=format&fit=crop&w=800&q=60",
+    title: "STEM Lab Setup",
+    description: "Support for schools in setting up tinkering and STEM labs.",
+    tags: ["Tinkering Labs", "STEM Kits", "Teacher Training"],
+    image: img4,
   },
 ];
 
 const Cards = () => {
   return (
     <section className="py-16 px-6 bg-[#D0EBFF]">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="relative rounded-2xl shadow-md overflow-hidden flex flex-col justify-between transition-transform transform hover:scale-105"
+            className="relative rounded-2xl shadow-md overflow-hidden flex flex-col transition-transform transform hover:scale-105 w-64 h-[420px]" // 👈 narrower & taller
           >
             <div
               className="absolute inset-0 bg-cover bg-center"
@@ -43,21 +47,21 @@ const Cards = () => {
             <div className="absolute inset-0 bg-white/70"></div>
 
             <div className="relative p-6 flex flex-col h-full">
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 drop-shadow-md">
+              <h3 className="text-xl font-bold mb-2 text-gray-900 drop-shadow-md">
                 {card.title}
               </h3>
-              <p className="text-gray-800 mb-4 drop-shadow-sm">{card.description}</p>
+              <p className="text-gray-800 mb-4 text-sm drop-shadow-sm">{card.description}</p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {card.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="bg-white/80 text-gray-800 text-sm px-3 py-1 rounded-full shadow-sm"
+                    className="bg-white/80 text-gray-800 text-xs px-2 py-1 rounded-full shadow-sm"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <button className="mt-auto flex items-center justify-between text-gray-900 font-semibold bg-white/80 px-4 py-2 rounded-xl shadow">
+              <button className="mt-auto flex items-center justify-between text-gray-900 font-semibold bg-white/80 px-3 py-2 rounded-xl shadow text-sm">
                 Explore
                 <span className="ml-2">→</span>
               </button>
