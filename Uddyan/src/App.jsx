@@ -5,6 +5,8 @@ import Cards from './components/Cards';
 import Carousel from './components/Carousel';
 import CoursesPage from './components/Courses';
 import CourseDetail from './components/CourseDetail'; 
+import Footer from "./components/Footer";
+import Gallery from "../src/pages/gallery"
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
               <HeroSection />
               <Carousel />
               <Cards />
+              <Footer/>
             </>
           }
         />
@@ -29,6 +32,9 @@ function App() {
 
         {/* Individual course page */}
         <Route path="/courses/:id" element={<CourseDetail />} />
+
+        {/* Gallery page */}
+        <Route path="/gallery" element={<Gallery />} /> 
       </Routes>
     </Router>
   );
